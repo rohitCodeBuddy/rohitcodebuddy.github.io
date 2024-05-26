@@ -1,42 +1,50 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  @apply overflow-hidden bg-black;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+:root {
+  --cl1: #d60000;
+  --cl2: #ff0000;
+  --cl3: #f0502c;
+  --cl4: #f26337;
 }
 
-@keyframes logo-spin {
-  from {
+.profile-card::before,
+.profile-card::after {
+  @apply content-[''] absolute inset-[-1rem] rounded-[inherit] -z-[1];
+  background: linear-gradient(
+    0deg,
+    var(--cl1),
+    var(--cl2),
+    var(--cl3),
+    var(--cl4)
+  );
+  animation: rotation 20s linear infinite;
+}
+
+.profile-card::after {
+  @apply blur-[3.5rem];
+}
+
+@keyframes rotation {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+
+  100% {
     transform: rotate(360deg);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 }
 
-.card {
-  padding: 2em;
+.scrollbar-none::-webkit-scrollbar {
+  @apply w-0 hidden;
 }
 
-.read-the-docs {
-  color: #888;
+.social-icons svg:nth-child(odd) {
+  @apply text-[var(--cl2)];
 }
