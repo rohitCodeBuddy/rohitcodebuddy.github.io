@@ -12,7 +12,7 @@ const USER = {
   lastName: "singh",
 };
 
-const MENU_OPTIONS = ["about", "projects", "contact", "profile", "others"];
+const MENU_OPTIONS = ["about", "projects", "contact"];
 function App() {
   const [selected, setSelected] = useState("");
   const onMenuClick = useCallback((option: string) => {

@@ -36,11 +36,6 @@ body {
   }
 }
 
-.vertical-text {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-}
-
 .scrollbar-none::-webkit-scrollbar {
   @apply w-0 hidden;
 }

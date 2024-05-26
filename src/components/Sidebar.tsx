@@ -16,7 +16,9 @@ const Sidebar: React.FC<SidebarProps> = ({
 }) => (
   <aside
     className={classNames(
-      "absolute top-1/2 -translate-y-1/2 right-0 w-16 flex flex-col justify-center gap-y-[100px] items-center select-none h-[calc(min(60dvh,500px))] overflow-auto py-4 scrollbar-none",
+      "absolute top-1/2 -translate-y-1/2 right-0",
+      "flex flex-col justify-around gap-y-[100px] items-center",
+      "w-16 h-[min(60dvh,400px)] overflow-auto scrollbar-none",
       className
     )}
     {...props}
@@ -27,7 +29,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         type="button"
         onClick={() => onClick(option)}
         className={classNames(
-          "uppercase text-white font-bold text-sm vertical-text transition-colors duration-500",
+          "uppercase text-white font-bold text-sm rotate-90 transition-colors duration-500",
           selected === option && "text-[var(--cl2)]"
         )}
       >
